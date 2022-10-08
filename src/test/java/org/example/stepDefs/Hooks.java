@@ -21,15 +21,15 @@ public class Hooks {
 
         //3- Configurations
         driver.manage().window().maximize();
-       // driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(3, TimeUnit.MINUTES);
 
         //4- navigate to url
         driver.get("https://eshop.vodafone.com.eg/shop/home");
     }
-//
-//    @After
-//    public static void quitDriver() throws InterruptedException {
-//        Thread.sleep(5000);
-//        driver.quit();
-//    }
+
+    @After
+    public static void quitDriver() {
+        //Thread.sleep(5000);
+        driver.quit();
+    }
 }

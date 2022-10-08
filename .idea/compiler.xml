@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="FWD" />
         <module name="VOIS_TASK" />
         <module name="VOIS_TASKf" />
-        <module name="FWD" />
+        <module name="Vod_Task" />
       </profile>
     </annotationProcessing>
   </component>

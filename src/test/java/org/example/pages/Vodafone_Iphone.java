@@ -27,6 +27,7 @@ public WebElement Click_English() {
 }
 
 public WebElement Apple_brand() {
+	((JavascriptExecutor)driver).executeScript("window.scrollBy(0,500);");
 		By brand = By.xpath("//ul[@class='brandContainer-brands-list utag--brands']//li[5]//a");
 		return  driver.findElement(By.cssSelector("ul>:nth-child(5).brand>a"));
 
@@ -39,15 +40,18 @@ public WebElement Apple_brand() {
 
 public WebElement Select_Iphone() {
 		//return  driver.findElement(By.xpath("//div[@id='home-0']//ul[1]//li[2]//div[2]//img"));
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		((JavascriptExecutor)driver).executeScript("window.scrollBy(0,1500");
-		WebElement Iphone = driver.findElement(By.xpath("(//*[@class=\"productList-item\"]/a)[1]"));
-		wait.until(ExpectedConditions.visibilityOf(Iphone));
-		return Iphone;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		((JavascriptExecutor)driver).executeScript("window.scrollBy(0,500);");
+		By x = By.xpath("(//*[@class=\"productList-item\"]/a)[1]");
+		wait.until(ExpectedConditions.presenceOfElementLocated(x));
+		return driver.findElement(x);
 }
 
 public WebElement Click_Add_To_Cart() {
-		return driver.findElement(By.cssSelector(".addToBasket-btn>.btn"));
+		By x = By.cssSelector(".addToBasket-btn>.btn");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		wait.until(ExpectedConditions.presenceOfElementLocated(x));
+		return driver.findElement(x);
 }
 
 public WebElement Proceed_To_Checkout() {
